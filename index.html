@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f5f2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#10151b" media="(prefers-color-scheme: dark)" />
+    <meta name="description" content="Yibin Fan is a computer science master's student at NC State University researching reinforcement learning, decision-making under uncertainty, and multimodal reasoning." />
+    <meta property="og:title" content="Yibin Fan — Academic Homepage" />
+    <meta property="og:description" content="Research, education, publications, and CV in an interactive shell." />
+    <meta property="og:type" content="website" />
+    <title>Yibin Fan — Academic Homepage</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="app.mjs"></script>
+  </head>
+  <body>
+    <main class="page">
+      <section class="profile" aria-labelledby="page-title">
+        <p class="site-label"># yibin-fan <span>·</span> personal homepage</p>
+        <h1 id="page-title">Yibin Fan<span class="cursor-dot">.</span></h1>
+        <p class="profile-meta">M.S. Computer Science <span>·</span> North Carolina State University</p>
+        <p class="profile-intro">I study how agents gather information and adapt under uncertainty. My interests span reinforcement learning, multimodal reasoning, and embodied AI.</p>
+        <p class="shell-hint">This page is a shell. Try <code>ls</code>, <code>cd research</code>, <code>cat about.md</code>, or <code>help</code>.</p>
+      </section>
+
+      <section class="terminal" id="terminal" aria-label="Interactive terminal">
+        <div class="terminal-body" id="terminal-body">
+          <div class="terminal-output" id="terminal-output" role="log" aria-live="polite" aria-relevant="additions text"></div>
+          <form id="terminal-form" class="prompt-row" autocomplete="off">
+            <label for="command-input" class="prompt-label"><span class="prompt-user">yibin</span>:<span id="prompt-path" class="prompt-path">~</span><span class="prompt-mark">$</span></label>
+            <input id="command-input" name="command" type="text" aria-label="Terminal command" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" />
+          </form>
+          <div id="completion-list" class="completion-list" role="status" aria-live="polite" hidden></div>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <span>© <span id="year"></span> Yibin Fan</span>
+        <nav aria-label="Contact links"><a href="mailto:yfan29@ncsu.edu">Email ↗</a><a href="https://github.com/Yibin-Fan" target="_blank" rel="noopener noreferrer">GitHub ↗</a></nav>
+      </footer>
+      <noscript>
+        <p class="noscript">This interactive homepage needs JavaScript. You can reach Yibin Fan at <a href="mailto:yfan29@ncsu.edu">yfan29@ncsu.edu</a> or view the <a href="assets/Yibin_Fan_CV.pdf">CV</a>.</p>
+      </noscript>
+    </main>
+  </body>
+</html>
