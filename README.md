@@ -25,4 +25,4 @@ Do not publish the parent `Materials` folder: it contains application documents 
 - Replace `assets/Yibin_Fan_CV.pdf` when the public CV changes.
 - Run `node --test` to check terminal navigation and content boundaries.
 
-The publication entry deliberately has no manuscript PDF link. The CV PDF is downloadable through `open resume/cv.pdf` or by clicking it in the terminal.
+The accepted paper entry deliberately has no PDF link. The CV PDF is downloadable through `open resume/cv.pdf` or by clicking it in the terminal.

@@ -23,10 +23,10 @@ test("navigation, relative paths, and absolute paths work together", () => {
   assert.equal(shell.execute("pwd").text, "/");
 });
 
-test("the paper has an accurate review status and no download target", () => {
+test("the paper has its accepted workshop status and no download target", () => {
   const paper = resolvePath([], "/publications/probe-exploit.md").node;
-  assert.match(paper.content, /Manuscript under review|MANUSCRIPT UNDER REVIEW/);
-  assert.match(paper.content, /NeurReps 2026/);
+  assert.match(paper.content, /Accepted at NeurReps 2026: Symmetry and Geometry in Neural Representations \(NeurIPS Workshop\)/);
+  assert.doesNotMatch(paper.content, /under review/i);
   assert.equal(paper.href, undefined);
 });
 

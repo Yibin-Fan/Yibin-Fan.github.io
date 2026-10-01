@@ -42,7 +42,7 @@ identification to recover task-relevant context for adaptive policies.
 Value-of-information analysis examined when targeted information gathering
 can improve decisions under a limited interaction budget.
 
-Related manuscript: see publications/probe-exploit.md`),
+Related paper: see publications/probe-exploit.md`),
 
     "rna-localization.md": file(`RNA SUBCELLULAR LOCALIZATION
 Graduate Research Assistant · NC State University · Sep 2025–Jan 2026
@@ -72,11 +72,11 @@ Sep 2021–Jun 2025 · GPA: 3.6/5.0 · Top 10%`),
   }),
 
   publications: directory({
-    "probe-exploit.md": file(`MANUSCRIPT UNDER REVIEW
+    "probe-exploit.md": file(`PUBLICATION
 
 Yibin Fan and Qi Zhang.
 “Probe--Exploit: When and How to Recover Hidden Symmetry Breaker in Equivariant RL.”
-Under review at NeurReps 2026 (NeurIPS Workshop).
+Accepted at NeurReps 2026: Symmetry and Geometry in Neural Representations (NeurIPS Workshop).
 `),
   }),
 
