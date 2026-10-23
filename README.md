@@ -26,3 +26,9 @@ Do not publish the parent `Materials` folder: it contains application documents 
 - Run `node --test` to check terminal navigation and content boundaries.
 
 The accepted paper entry deliberately has no PDF link. The CV PDF is downloadable through `open resume/cv.pdf` or by clicking it in the terminal.
+
+## Visitor analytics
+
+The site uses the `yibin.goatcounter.com` account for pageviews. Its script in `index.html` sends a pageview when the homepage opens. `analytics.mjs` maps successful terminal interactions to a small set of named events: browsing a section, reading a public file, and opening the CV. It never sends the visitor's typed command or arguments. Opening the PDF URL directly bypasses the homepage script and is not counted as an `open-cv` event.
+
+GoatCounter normally shows aggregate statistics. To inspect one row per visit, enable **Individual pageviews** in the GoatCounter site settings. Localhost visits are ignored by default. To check the live integration, visit the published homepage and then open the GoatCounter dashboard; browser content blockers may prevent a visit from being recorded.

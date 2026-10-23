@@ -1,4 +1,5 @@
 import { createShell, displayPath } from "./shell.mjs";
+import { eventFor } from "./analytics.mjs";
 
 const shell = createShell();
 const page = document.querySelector(".page");
@@ -7,8 +8,30 @@ const form = document.querySelector("#terminal-form");
 const input = document.querySelector("#command-input");
 const promptPath = document.querySelector("#prompt-path");
 const completionList = document.querySelector("#completion-list");
+const analyticsScript = document.querySelector("script[data-goatcounter]");
+const pendingEvents = [];
+let analyticsAvailable = true;
 let historyIndex = 0;
 let draft = "";
+
+function flushEvents() {
+  if (typeof window.goatcounter?.count !== "function") return;
+  while (pendingEvents.length) {
+    window.goatcounter.count({ path: pendingEvents.shift(), event: true });
+  }
+}
+
+analyticsScript?.addEventListener("load", flushEvents);
+analyticsScript?.addEventListener("error", () => {
+  analyticsAvailable = false;
+  pendingEvents.length = 0;
+});
+
+function trackEvent(name) {
+  if (!name || !analyticsScript || !analyticsAvailable) return;
+  pendingEvents.push(name);
+  flushEvents();
+}
 
 function scrollToBottom() {
   input.scrollIntoView({ block: "nearest" });
@@ -129,6 +152,7 @@ function run(command, initial = false) {
   renderEcho(command, path);
   const result = shell.execute(command);
   renderResult(result);
+  if (!initial) trackEvent(eventFor(command, path, result));
   promptPath.textContent = displayPath(shell.cwd);
   historyIndex = shell.history.length;
   draft = "";
